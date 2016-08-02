@@ -12,12 +12,16 @@ ListsAndCards testing project
 
 2.RVAdapter
 將onBindViewHolder中的
+
 personViewHolder.personPhoto.setImageURI(persons.get(i).photoID);
+
 改為下面這行
+
 personViewHolder.personPhoto.setImageBitmap(persons.get(i).bitmap);
 
 3.RecyclerViewActivity
   (1)加入Thread及Handler
+  
     private Handler mUI_Handler = new Handler();
     private Handler mThreadHandler;
     private HandlerThread mThread;
