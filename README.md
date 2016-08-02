@@ -37,8 +37,13 @@ personViewHolder.personPhoto.setImageBitmap(persons.get(i).bitmap);
   (3)在OnCreate()中 initializeData();及initializeAdapter();這兩行後面 使用mUI_Handler.postDelayed 來增加新的item 延遲設定為10000毫秒
   
 我遇到的問題如下：
+
 若只使用post的話 可以順利執行，app執行就會把完整的view(4個item)呈現出來
+
 而使用postDelayed的情況下 過了10秒後 雖然Person的List有增加(使用adapter.getItemCount()檢查) 但是UI上不會更新加上去的item UI上只呈現initializeData()中的3個item
+
 不知道問題出在哪邊
+
 (我認為有可能是notifyItemInserted的部分有問題 但不知道問題出在哪邊 以及解決的方法)
+
 謝謝!
