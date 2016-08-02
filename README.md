@@ -20,6 +20,7 @@ personViewHolder.personPhoto.setImageURI(persons.get(i).photoID);
 personViewHolder.personPhoto.setImageBitmap(persons.get(i).bitmap);
 
 3.RecyclerViewActivity
+
   (1)加入Thread及Handler
   
     private Handler mUI_Handler = new Handler();
@@ -29,8 +30,10 @@ personViewHolder.personPhoto.setImageBitmap(persons.get(i).bitmap);
     mThread = new HandlerThread("name");
     mThread.start();
     mThreadHandler=new Handler(mThread.getLooper());
+    
   (2)將Person讀取圖片的路徑改成從手機的"Download"資料夾讀取 圖片檔名有  1.jpg、2.jpg、3.jpg、4.jpg(如有需要可提供圖片)
     詳見initializeData()
+    
   (3)在OnCreate()中 initializeData();及initializeAdapter();這兩行後面 使用mUI_Handler.postDelayed 來增加新的item 延遲設定為10000毫秒
   
 我遇到的問題如下：
